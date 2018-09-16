@@ -1,18 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
+import MoviesContainer from '../Movies/Container';
+import GenreSelectContainer from "../GenreSelect/Container";
+import {AppMain, FormFields} from "./Styled";
+import RatingSliderContainer from "../RatingSlider/Container";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <header>
-          <h1>Welcome to React</h1>
-        </header>
-        <p>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+class AppComponent extends React.Component {
+    componentWillMount() {
+        if (this.props.onComponentWillMount !== undefined) {
+           this.props.onComponentWillMount();
+        }
+    }
+
+    render() {
+        return (
+            <AppMain>
+                <FormFields>
+                    <RatingSliderContainer />
+                    <GenreSelectContainer />
+                </FormFields>
+                <MoviesContainer />
+            </AppMain>
+        );
+    }
 }
 
-export default App;
+export default AppComponent;
