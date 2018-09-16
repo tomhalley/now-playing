@@ -19,6 +19,10 @@ export const GenreSelectMenuItem = styled(MenuItem)`
     && {
         ${props => props.selected === true &&`
             font-weight: bold;
+            background-color: grey;
+        `}
+        ${props => props.selected === false &&`
+            font-weight: normal;
         `}
     }
 `;

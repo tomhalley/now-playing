@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Slider from "@material-ui/lab/Slider/Slider";
 
-export const RatinSliderWrapper = styled.div`
+export const RatingSliderWrapper = styled.div`
     max-width: 300px;
     display: flex;
     flex-direction: row;

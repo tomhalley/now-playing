@@ -1,4 +1,5 @@
 import React from 'react';
+
 import MoviesContainer from '../Movies/Container';
 import GenreSelectContainer from "../GenreSelect/Container";
 import {AppMain, FormFields} from "./Styled";

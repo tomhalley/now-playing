@@ -6,7 +6,7 @@ import {MovieCard, MovieCardContent, MovieCardMedia} from "./Styled";
 export class MovieComponent extends React.Component {
     render() {
         return (
-            <MovieCard>
+            <MovieCard visible={this.props.visible ? 1 : 0}>
                 <MovieCardContent>
                     <Typography variant="headline">{this.props.title}</Typography>
                     <Typography variant="subheading" color="textSecondary">
@@ -29,5 +29,6 @@ MovieComponent.defaultProps = {
 MovieComponent.propTypes = {
     title: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,
-    genres: PropTypes.array
+    genres: PropTypes.array,
+    visible: PropTypes.bool.isRequired
 };

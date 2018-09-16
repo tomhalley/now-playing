@@ -3,7 +3,6 @@ import {createLogger} from 'redux-logger'
 import {createStore, applyMiddleware} from 'redux'
 import rootReducer from './Reducer';
 import {PreloadedState} from './PreloadedState';
-// import whyDidYouUpdate from 'why-did-you-update';
 
 const loggerMiddleware = createLogger();
 
@@ -13,7 +12,6 @@ const middleware = [
 
 if (process.env.NODE_ENV === 'development') {
     middleware.push(loggerMiddleware);
-    // whyDidYouUpdate(React)
 }
 
 const AppStore = createStore(

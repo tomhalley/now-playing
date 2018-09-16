@@ -16,7 +16,8 @@ export function movies(state = {}, action) {
                         title: movieData.title,
                         genres: [...movieData.genre_ids],
                         rating: movieData.vote_average,
-                        image_url: movieData.poster_path
+                        image_url: movieData.poster_path,
+                        popularity: movieData.popularity
                     }
                 }),
                 error: false

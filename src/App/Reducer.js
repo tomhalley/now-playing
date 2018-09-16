@@ -6,7 +6,7 @@ import {
 import {movies} from '../Movies/Reducer';
 import {genres} from "../GenreSelect/Reducer";
 
-function app(state = {}, action) {
+export function app(state = {}, action) {
     switch (action.type) {
         case APP_FILTER_BY_RATING:
             return {

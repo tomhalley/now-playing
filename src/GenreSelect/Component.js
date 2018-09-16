@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import InputLabel from "@material-ui/core/InputLabel/InputLabel";
 import Select from "@material-ui/core/Select/Select";
 import Input from "@material-ui/core/Input/Input";
-import Chip from "@material-ui/core/Chip/Chip";
 import {
     GenreSelectChip,
     GenreSelectChipWrapper,

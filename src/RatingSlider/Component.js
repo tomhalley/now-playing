@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {RatingSlider, RatinSliderWrapper} from "./Styled";
+import {RatingSlider, RatingSliderWrapper} from "./Styled";
 import Typography from "@material-ui/core/Typography/Typography";
 
 export class RatingSliderComponent extends React.Component {
@@ -10,7 +10,7 @@ export class RatingSliderComponent extends React.Component {
 
     render() {
         return (
-            <RatinSliderWrapper>
+            <RatingSliderWrapper>
                 <Typography id="label">{this.props.app.rating.toFixed(1)}/10</Typography>
                 <RatingSlider
                     value={this.props.app.rating}
@@ -19,7 +19,7 @@ export class RatingSliderComponent extends React.Component {
                     step={0.5}
                     onChange={this.handleChange}
                 />
-            </RatinSliderWrapper>
+            </RatingSliderWrapper>
         )
     }
 }

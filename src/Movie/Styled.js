@@ -7,7 +7,11 @@ export const MovieCard = styled(Card)`
     && {
         display: flex;
         flex-direction: row;
-        margin: 10px;
+        margin-bottom: 10px;
+        
+        ${props => props.visible === 0 &&`
+            display: none;
+        `}
     } 
 `;
 
