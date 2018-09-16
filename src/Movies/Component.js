@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import {MovieComponent} from "../Movie/Component";
 import Typography from "@material-ui/core/Typography/Typography";
 import {MoviesWrapper} from "./Styled";
 
+/**
+ * Movies Component
+ * @description used to render and filter a list of movies
+ */
 export class MoviesComponent extends React.PureComponent {
     componentWillMount() {
         if (this.props.onComponentWillMount !== undefined) {
@@ -49,5 +54,5 @@ export class MoviesComponent extends React.PureComponent {
 }
 
 MoviesComponent.propTypes = {
-    onComponentWillMount: PropTypes.func.isRequired
+    onComponentWillMount: PropTypes.func
 };

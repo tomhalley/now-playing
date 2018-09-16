@@ -5,7 +5,7 @@ import GenreSelectContainer from "../GenreSelect/Container";
 import {AppMain, FormFields} from "./Styled";
 import RatingSliderContainer from "../RatingSlider/Container";
 
-class AppComponent extends React.Component {
+export class AppComponent extends React.Component {
     componentWillMount() {
         if (this.props.onComponentWillMount !== undefined) {
            this.props.onComponentWillMount();
@@ -24,5 +24,3 @@ class AppComponent extends React.Component {
         );
     }
 }
-
-export default AppComponent;

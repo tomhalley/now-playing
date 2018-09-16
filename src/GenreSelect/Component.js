@@ -12,7 +12,7 @@ import {
     GenreSelectWrapper
 } from "./Styled";
 
-export class GenreSelectComponent extends React.Component {
+export class GenreSelectComponent extends React.PureComponent {
     componentWillMount() {
         if (this.props.onComponentWillMount !== undefined) {
             this.props.onComponentWillMount();
@@ -65,5 +65,6 @@ export class GenreSelectComponent extends React.Component {
 }
 
 GenreSelectComponent.propTypes = {
+    onComponentWillMount: PropTypes.func,
     onGenreSelected: PropTypes.func.isRequired
 };

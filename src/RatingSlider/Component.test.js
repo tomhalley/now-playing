@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {AppComponent} from "./Component";
-import {Provider} from "react-redux";
-import AppStore from "./Store";
+import {RatingSliderComponent} from './Component';
 
-describe('App/Component', () => {
+describe('RatingSlider/Component', () => {
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(
-            <Provider store={AppStore}>
-                <AppComponent />
-            </Provider>,
+            <RatingSliderComponent
+                onRatingChanged={() => {}}
+                app={{
+                    rating: 3
+                }}
+            />,
             div
         );
         ReactDOM.unmountComponentAtNode(div);

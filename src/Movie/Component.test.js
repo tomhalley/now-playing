@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {AppComponent} from "./Component";
-import {Provider} from "react-redux";
-import AppStore from "./Store";
+import {MovieComponent} from './Component';
 
-describe('App/Component', () => {
+describe('Movie/Component', () => {
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(
-            <Provider store={AppStore}>
-                <AppComponent />
-            </Provider>,
+            <MovieComponent
+                imageUrl="test.jpg"
+                title="test movie"
+                visible={true}
+            />,
             div
         );
         ReactDOM.unmountComponentAtNode(div);
