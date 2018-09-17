@@ -24,6 +24,10 @@ export class RatingSliderComponent extends React.Component {
         this.setState({rating: value});
     };
 
+    /**
+     * We don't fire the prop callback with the new value until the user has finished dragging,
+     * to save on re-rendering
+     */
     handleDragEnd = () => {
         this.props.onRatingChanged(this.state.rating);
     };

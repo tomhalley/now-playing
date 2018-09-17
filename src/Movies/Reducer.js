@@ -1,5 +1,11 @@
 import {RECEIVE_MOVIES, RECEIVE_MOVIES_FAIL, REQUEST_MOVIES} from "./Actions";
 
+/**
+ * Movies reducer
+ * @param state
+ * @param action
+ * @returns {*}
+ */
 export function movies(state = {}, action) {
     switch (action.type) {
         case REQUEST_MOVIES:

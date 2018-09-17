@@ -23,6 +23,11 @@ export function receiveMoviesFail(error) {
     }
 }
 
+/**
+ * Async Action Creator for movies
+ * @description updates the state with the movies data
+ * @returns {Function}
+ */
 export function getMovies() {
     return (dispatch) => {
         dispatch(requestMovies());

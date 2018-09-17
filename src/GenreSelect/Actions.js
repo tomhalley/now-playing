@@ -2,7 +2,6 @@ export const REQUEST_GENRES = "REQUEST_GENRES";
 export const RECEIVE_GENRES = "RECEIVE_GENRES";
 export const RECEIVE_GENRES_FAIL = "RECEIVE_GENRES_FAIL";
 
-
 export function requestGenres() {
     return {
         type: REQUEST_GENRES
@@ -23,6 +22,11 @@ export function receiveGenresFail(error) {
     }
 }
 
+/**
+ * Async Action Creator for genres
+ * @description updates the state with the genres data
+ * @returns {Function}
+ */
 export function getGenres() {
     return (dispatch) => {
         dispatch(requestGenres());

@@ -4,6 +4,12 @@ import {
     REQUEST_GENRES
 } from "./Actions";
 
+/**
+ * Genres reducer
+ * @param state
+ * @param action
+ * @returns {*}
+ */
 export function genres(state = {}, action) {
     switch (action.type) {
         case REQUEST_GENRES:

@@ -17,6 +17,10 @@ export class MoviesComponent extends React.PureComponent {
     }
 
     getFilteredMovies = () => {
+        /**
+         * This was an interesting problem, but thankfully .every short circuits the search
+         * as soon as it finds an element which doesn't match
+         */
         return this.props.movies.data
             .filter(movie => {
                 return movie.rating >= this.props.app.rating;

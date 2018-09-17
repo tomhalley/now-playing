@@ -6,6 +6,12 @@ import {
 import {movies} from '../Movies/Reducer';
 import {genres} from "../GenreSelect/Reducer";
 
+/**
+ * App reducer
+ * @param state
+ * @param action
+ * @returns {*}
+ */
 export function app(state = {}, action) {
     switch (action.type) {
         case APP_FILTER_BY_RATING:
@@ -33,10 +39,11 @@ export function app(state = {}, action) {
     }
 }
 
-const rootReducer = combineReducers({
+/**
+ * @type {Reducer<any> | Reducer<any, AnyAction>}
+ */
+export const rootReducer = combineReducers({
     app,
     movies,
     genres
 });
-
-export default rootReducer

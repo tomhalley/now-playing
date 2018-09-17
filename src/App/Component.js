@@ -5,6 +5,10 @@ import GenreSelectContainer from "../GenreSelect/Container";
 import {AppMain, FormFields} from "./Styled";
 import RatingSliderContainer from "../RatingSlider/Container";
 
+/**
+ * App Component
+ * @description The main component that will be injected into our root div
+ */
 export class AppComponent extends React.Component {
     componentWillMount() {
         if (this.props.onComponentWillMount !== undefined) {
