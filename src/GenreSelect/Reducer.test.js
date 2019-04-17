@@ -1,52 +1,49 @@
-import {genres} from './Reducer';
-import {} from "./Actions";
-import {PreloadedState} from "../App/PreloadedState";
-import {REQUEST_GENRES} from "./Actions";
-import {RECEIVE_GENRES} from "./Actions";
-import {RECEIVE_GENRES_FAIL} from "./Actions";
+import genres from './Reducer';
+import { REQUEST_GENRES, RECEIVE_GENRES, RECEIVE_GENRES_FAIL } from './Actions';
+import PreloadedState from '../App/PreloadedState';
 
 describe('GenreSelect/Reducer', () => {
-    it('should return the initial state', () => {
-        expect(genres(PreloadedState, {})).toEqual(PreloadedState)
+  it('should return the initial state', () => {
+    expect(genres(PreloadedState, {})).toEqual(PreloadedState);
+  });
+
+  it('REQUEST_GENRES should set isFetching', () => {
+    const newState = genres(PreloadedState.genres, {
+      type: REQUEST_GENRES,
     });
 
-    it('REQUEST_GENRES should set isFetching', () => {
-        let newState = genres(PreloadedState.genres, {
-            type: REQUEST_GENRES
-        });
+    expect(newState).toEqual({
+      isFetching: true,
+      data: [],
+      error: false,
+    });
+  });
 
-        expect(newState).toEqual({
-            isFetching: true,
-            data: [],
-            error: false
-        });
+  it('RECEIVE_GENRES should set data', () => {
+    const data = { value: [100] };
+    const newState = genres(PreloadedState.genres, {
+      type: RECEIVE_GENRES,
+      payload: data,
     });
 
-    it('RECEIVE_GENRES should set data', () => {
-        const data = {value: [100]};
-        let newState = genres(PreloadedState.genres, {
-            type: RECEIVE_GENRES,
-            payload: data
-        });
+    expect(newState).toEqual({
+      isFetching: false,
+      data,
+      error: false,
+    });
+  });
 
-        expect(newState).toEqual({
-            isFetching: false,
-            data: data,
-            error: false
-        });
+  it('RECEIVE_GENRES_FAIL should set error', () => {
+    const error = new Error();
+    const newState = genres(PreloadedState.genres, {
+      type: RECEIVE_GENRES_FAIL,
+      payload: error,
     });
 
-    it('RECEIVE_GENRES_FAIL should set error', () => {
-        const error = new Error();
-        let newState = genres(PreloadedState.genres, {
-            type: RECEIVE_GENRES_FAIL,
-            payload: error
-        });
-
-        expect(newState).toEqual({
-            isFetching: false,
-            data: [],
-            error: error
-        });
+    expect(newState).toEqual({
+      isFetching: false,
+      data: [],
+      error,
     });
+  });
 });

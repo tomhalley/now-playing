@@ -1,27 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Typography from "@material-ui/core/Typography/Typography";
+import Typography from '@material-ui/core/Typography/Typography';
 
 import {
-    RatingSlider,
-    RatingSliderWrapper
-} from "./Styled";
+  RatingSlider,
+  RatingSliderWrapper,
+} from './Styled';
 
 /**
  * Rating slider component
  * @description renders a slider from the input values and fires a callback on value change
  */
-export class RatingSliderComponent extends React.Component {
-    constructor(props) {
-        super(props);
+class RatingSliderComponent extends React.Component {
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            rating: props.app.rating
-        };
-    }
+    const {
+      app: {
+        rating,
+      },
+    } = props;
+
+    this.state = {
+      rating,
+    };
+  }
 
     handleChange = (event, value) => {
-        this.setState({rating: value});
+      this.setState({ rating: value });
     };
 
     /**
@@ -29,26 +35,39 @@ export class RatingSliderComponent extends React.Component {
      * to save on re-rendering
      */
     handleDragEnd = () => {
-        this.props.onRatingChanged(this.state.rating);
+      const { onRatingChanged } = this.props;
+      const { rating } = this.state;
+
+      onRatingChanged(rating);
     };
 
     render() {
-        return (
-            <RatingSliderWrapper>
-                <Typography id="label">{this.state.rating.toFixed(1)}/10</Typography>
-                <RatingSlider
-                    value={this.state.rating}
-                    min={0}
-                    max={10}
-                    step={0.5}
-                    onChange={this.handleChange}
-                    onDragEnd={this.handleDragEnd}
-                />
-            </RatingSliderWrapper>
-        )
+      const { rating } = this.state;
+
+      return (
+        <RatingSliderWrapper>
+          <Typography id="label">
+            {rating.toFixed(1)}
+/10
+          </Typography>
+          <RatingSlider
+            value={rating}
+            min={0}
+            max={10}
+            step={0.5}
+            onChange={this.handleChange}
+            onDragEnd={this.handleDragEnd}
+          />
+        </RatingSliderWrapper>
+      );
     }
 }
 
 RatingSliderComponent.propTypes = {
-    onRatingChanged: PropTypes.func.isRequired
+  app: PropTypes.shape({
+    rating: PropTypes.number.isRequired,
+  }).isRequired,
+  onRatingChanged: PropTypes.func.isRequired,
 };
+
+export default RatingSliderComponent;

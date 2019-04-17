@@ -1,19 +1,17 @@
-import {connect} from 'react-redux';
-import {RatingSliderComponent} from "./Component";
-import {filterByRating} from "../App/Actions";
+import { connect } from 'react-redux';
+import RatingSliderComponent from './Component';
+import { filterByRating } from '../App/Actions';
 
-const mapStateToProp = (state) => {
-    return {
-        app: {
-            rating: state.app.rating
-        }
-    }
-};
+const mapStateToProp = state => ({
+  app: {
+    rating: state.app.rating,
+  },
+});
 
-const mapDispatchToProps = (dispatch) => ({
-    onRatingChanged: (value) => {
-        dispatch(filterByRating(value));
-    }
+const mapDispatchToProps = dispatch => ({
+  onRatingChanged: (value) => {
+    dispatch(filterByRating(value));
+  },
 });
 
 export default connect(mapStateToProp, mapDispatchToProps)(RatingSliderComponent);

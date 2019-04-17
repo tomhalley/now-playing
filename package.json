@@ -17,14 +17,49 @@
     "styled-components": "^3.4.6"
   },
   "devDependencies": {
-    "redux-mock-store": "^1.5.3",
+    "eslint": "5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "fetch-mock": "^7.0.0-alpha.6",
-    "react-scripts": "1.1.5"
+    "react-scripts": "^2.1.8",
+    "redux-mock-store": "^1.5.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-airbnb",
+    "parser": "babel-eslint",
+    "rules": {
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ]
+    },
+    "env": {
+      "jest": true
+    },
+    "globals": {
+      "window": true,
+      "jest": true,
+      "fetch": true,
+      "console": true
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
